@@ -1,23 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Todo } from '../todo';
+import { StrengthPipe } from '../pipes/strength/strength.pipe';
+import { RouterModule } from '@angular/router';
+import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-dashboard',
+  standalone: true,  
+  imports:[StrengthPipe,RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  heroes: Hero[] = [];
+  todos: Todo[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private todoService: TodoService) { }
 
-  ngOnInit(): void {
-    this.getHeroes();
+  ngOnInit() {
+    this.getTodos();
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+  getTodos(): void {
+    this.todoService.getTodos()
+      .subscribe(todos => this.todos = todos.slice(1, 5));
+      // console.log('this.todos: ', this.todos);
+
   }
 }

@@ -1,0 +1,26 @@
+/* todosComponent's private CSS styles */
+.todos {
+    margin: 0 30em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 20em;
+    height: 10em;
+  }
+  .todos li {
+    position: relative;
+    cursor: pointer;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  
+  .todos li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+    text-decoration-line: line-through !important;
+  }
+  
+  
