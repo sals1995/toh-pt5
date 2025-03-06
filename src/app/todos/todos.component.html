@@ -1,0 +1,19 @@
+
+<ul class="todos">
+    <h3>My Todos</h3>
+  @for (todo of todos; track todo.id) {
+    <li>
+      <app-todo [todo]="todo"></app-todo>
+    </li>
+  }
+</ul>
+
+
+
+
+
+
+
+
+
+
