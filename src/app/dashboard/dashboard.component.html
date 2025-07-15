@@ -1,0 +1,14 @@
+<h3>Top Todos</h3>
+<div class="grid grid-pad">
+  @for (todo of todos; track todo.id) {
+
+    <a class="col-1-3" >
+      <div class="module todo">
+        <h4>{{todo.name}}</h4>
+        <p>Priority: {{todo.priority | strength}}
+      </div>
+    </a>
+  }
+</div>
+
+
