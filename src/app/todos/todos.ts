@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Todo } from '../todo';
-import { TodoComponent } from '../todo/todo.component';
+import {Todo } from '../todo/todo';
 import { TodoService } from '../services/todo.service';
+import { TodoModel } from '../todo';
 
 @Component({
   selector: 'app-todos',
-  standalone: true,
-  imports:[TodoComponent],
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  imports:[Todo],
+  templateUrl: './todos.html',
+  styleUrls: ['./todos.css']
 })
-export class TodosComponent implements OnInit {
-  todos:Todo[];
+export class Todos implements OnInit {
+  todos:TodoModel[];
 
   constructor(private todoService: TodoService) { 
      this.todos=[]
@@ -22,7 +21,7 @@ export class TodosComponent implements OnInit {
     this.getTodos()    
   }
   
-  getTodos(): void {
+  getTodos() : void {
     this.todoService.getTodos()
     .subscribe(todos =>  this.todos = todos);
   }

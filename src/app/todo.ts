@@ -1,5 +1,5 @@
-export class Todo {
-  id!: number;
-  name!: string;
-  priority!:number
+export interface TodoModel {
+  id: number;
+  name: string;
+  priority:number
 }

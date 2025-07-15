@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Todo } from '../todo';
+import {  TodoModel } from '../todo';
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +17,13 @@ export class TodoService {
   constructor() { }
 
   /** GET heroes from the server */
-  getTodos (): Observable<Todo[]> {
+  getTodos (): Observable<TodoModel[]> {
     return of(this.todos)
   }
 
 
   /** GET Todo by id. Will 404 if id not found */
-  getTodo(id: number): Observable<Todo> {
+  getTodo(id: number): Observable<TodoModel> {
     return of(this.todos[0])
   }
 }
